@@ -1,31 +1,54 @@
 {
-  "name": "new",
+  "name": "myob-hr-calculator",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@material-ui/core": "4.4.0",
-    "@material-ui/icons": "4.2.1",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "mysql": "^2.17.1",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
     "react-scripts": "3.0.1",
-    "styled-components": "4.3.2"
+    "source-map-explorer": "^2.0.1",
+    "styled-components": "4.3.2",
+    "styled-normalize": "^8.0.6"
   },
   "devDependencies": {
-    "typescript": "3.3.3",
-    "styled-components": "4.3.2"
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.2",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "^16.9.0",
+    "styled-reset": "^4.0.0",
+    "typescript": "3.3.3"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject",
+    "server": "npx nodemon server.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "proxy": "http://localhost:5000",
+  "nodemonConfig": {
+    "ignore": [
+      "src/*",
+      "public/*"
+    ],
+    "delay": "2500"
+  }
 }
